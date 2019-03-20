@@ -1,4 +1,5 @@
 import sys
+import numpy as np
 
 print(sys.version)
 
@@ -8,3 +9,6 @@ print('in win')
 print('in mac 2')
 print('in win2')
 print('in mac3')
+
+d = np.array([1,2,3])
+print(d)
