@@ -1,5 +1,6 @@
 import sys
 import numpy as np
+import pandas as pd
 
 print(sys.version)
 
@@ -15,3 +16,6 @@ print(d)
 
 print('in mac4')
 print('in win 3')
+
+
+
