@@ -12,3 +12,5 @@ print('in mac3')
 
 d = np.array([1, 2, 3])
 print(d)
+
+print('in mac4')
