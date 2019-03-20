@@ -14,3 +14,4 @@ d = np.array([1, 2, 3])
 print(d)
 
 print('in mac4')
+print('in win 3')
