@@ -1,0 +1,19 @@
+modules:
+
+- folders:
+    - DataFiles
+    - DataClasses
+    - TestFiles
+
+- classes for getting data
+
+- Controller Classes
+
+- classes for storing data
+
+- stock object
+
+- general ops classes
+
+- classes for analyzing texts
+
