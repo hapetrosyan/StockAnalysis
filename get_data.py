@@ -10,14 +10,12 @@ from os import walk
 import requests
 import json
 
-import sys
-sys.path.insert(0, './Misc')
 import misc_ops
 
 
 
-
-@staticmethod
+class DataOps:
+    @staticmethod
     def get_alphavantage_100_days_dict(symbol):
         mo = misc_ops.MiscOps()
         request_link = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='+symbol+'&apikey=K2L959U20SZIKBDG'
