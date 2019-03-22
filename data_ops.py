@@ -9,9 +9,7 @@ import os
 from os import walk
 import requests
 import json
-
 import misc_ops
-
 
 
 class DataOps:
