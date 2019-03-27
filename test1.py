@@ -1,8 +1,7 @@
 
 import sys
+import data_ops
+import stocksymbol as s
 
-print(sys.version)
-
-
-print(9)
+amzn = s.StockSymbol('AMZN')
 
