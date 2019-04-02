@@ -104,3 +104,11 @@ class DataOps:
     @staticmethod
     def get_all_symbols_list(df):
         return df['Symbol'].unique()
+
+
+    @staticmethod
+    def get_nasdaq_symbols_list():
+        nasdaq_list = pd.read_csv('DataFiles\\companylist.csv')
+
+
+        return nasdaq_list
