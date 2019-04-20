@@ -109,6 +109,4 @@ class DataOps:
     @staticmethod
     def get_nasdaq_symbols_list():
         nasdaq_list = pd.read_csv('DataFiles\\companylist.csv')
-
-
         return nasdaq_list

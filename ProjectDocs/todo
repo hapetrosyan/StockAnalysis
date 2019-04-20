@@ -1,1 +1,27 @@
+Nasdaq data
 1.  get symbol - company mapping
+        done:   got list from nasdaq
+
+pre-market data
+
+2.  get stocks list to analyze:
+    1.  get stocks from nasdaq list in:
+        1.  price range
+        2.  volume range
+        3.  industry
+
+    2.  after, find following parameters:
+        1.  important companies
+        2.  with a long record of profitable operations
+        3.  strong financial condition
+        4.  stock with fresh news
+        5.  up or down > 2%
+        6.  unusual pre-market activity
+        7   develops important intraday levels
+
+
+3.  identify patterns for trading
+    1.  long trading
+        1.  ABCD pattern
+        2.  bull flag momentum
+        3.  reversal trading

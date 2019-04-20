@@ -9,14 +9,14 @@ class StockSymbol:
         self.symbol = symbol
 
         # self.alphavantage_100_days_dict = do.get_alphavantage_100_days_dict(self.symbol)
-        # self.alphavantage_intraday_5_min_dict = do.get_alphavantage_intraday_5_min_dict(self.symbol)
+        self.alphavantage_intraday_5_min_dict = do.get_alphavantage_intraday_5_min_dict(self.symbol)
         self.alphavantage_intraday_1_min_dict = do.get_alphavantage_intraday_1_min_dict(self.symbol)
         # self.alphavantage_1_week_dict = do.get_alphavantage_1_week_dict(self.symbol)
 
-        # self.alphavantage_intraday_5_min_df = self.get_alphavantage_df_from_dict(self.alphavantage_intraday_5_min_dict)
-        self.alphavantage_intraday_1_min_df = self.get_alphavantage_df_from_dict(self.alphavantage_intraday_1_min_dict)
-        # self.alphavantage_100_days_df = self.get_alphavantage_df_from_dict(self.alphavantage_100_days_dict)
-        # self.alphavantage_1_week_df = self.get_alphavantage_df_from_dict(self.alphavantage_1_week_dict)
+        self.alphavantage_intraday_5_min_df = self.__get_alphavantage_df_from_dict(self.alphavantage_intraday_5_min_dict)
+        self.alphavantage_intraday_1_min_df = self.__get_alphavantage_df_from_dict(self.alphavantage_intraday_1_min_dict)
+        # self.alphavantage_100_days_df = self.__get_alphavantage_df_from_dict(self.alphavantage_100_days_dict)
+        # self.alphavantage_1_week_df = self.__get_alphavantage_df_from_dict(self.alphavantage_1_week_dict)
 
         # self.ccp_sum_20_100 = self.get_last_n_ccp_sum(n = 20, period = '100_days')
         # self.ccp_sum_10_100 = self.get_last_n_ccp_sum(n = 10, period = '100_days')
@@ -25,6 +25,7 @@ class StockSymbol:
         self.ccp_sum_20_1_min = self.get_last_n_ccp_sum(n=20, period='1_min')
         self.ccp_sum_10_1_min = self.get_last_n_ccp_sum(n=10, period='1_min')
         self.ccp_sum_5_1_min = self.get_last_n_ccp_sum(n=5, period='1_min')
+        self.price_difference = self.__get_premarket_price_difference()
 
         '''
         # self.hist_price_df = df
@@ -66,7 +67,7 @@ class StockSymbol:
         return (pc.sum())
 
     @staticmethod
-    def get_alphavantage_df_from_dict(alphavantage_dict):
+    def __get_alphavantage_df_from_dict(alphavantage_dict):
         alphavantage_df = pd.DataFrame(columns=['datetime', 'open', 'high', 'low', 'close', 'ccp', 'volume'])
         i = 0
         prev_close = 0
@@ -96,3 +97,10 @@ class StockSymbol:
             return 0
             exit()
         return sum(df['ccp'][-n:])
+
+    '''
+    replace current df with premarket dataframe
+    get better logic for price difference
+    '''
+    def __get_premarket_price_difference(self):
+        return (self.alphavantage_intraday_1_min_df.close.max() - self.alphavantage_intraday_1_min_df.close.min()) / self.alphavantage_intraday_1_min_df.close.max()
