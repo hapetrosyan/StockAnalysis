@@ -12,6 +12,9 @@ class StockSymbol:
         self.alphavantage_intraday_5_min_dict = do.get_alphavantage_intraday_5_min_dict(self.symbol)
         self.alphavantage_intraday_1_min_dict = do.get_alphavantage_intraday_1_min_dict(self.symbol)
         # self.alphavantage_1_week_dict = do.get_alphavantage_1_week_dict(self.symbol)
+        self.company_profile_dict = do.get_company_profile_dict(self.symbol)
+        self.company_annual_income_dict = do.get_company_annual_income_dict(self.symbol)
+        self.company_quarterly_income_dict = do.get_company_quarterly_income_dict(self.symbol)
 
         self.alphavantage_intraday_5_min_df = self.__get_alphavantage_df_from_dict(self.alphavantage_intraday_5_min_dict)
         self.alphavantage_intraday_1_min_df = self.__get_alphavantage_df_from_dict(self.alphavantage_intraday_1_min_dict)
