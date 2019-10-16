@@ -132,8 +132,8 @@ class DataOps:
         if resp.status_code != 200:
             # This means something went wrong.
             raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-        resp_json = resp.json() # ['Time Series (Daily)']
-        return resp_json['financials']
+        resp_json = resp.json()
+        return resp_json
 
     @staticmethod
     def get_company_quarterly_income_dict(symbol):
@@ -146,4 +146,17 @@ class DataOps:
             raise ApiError('GET /tasks/ {}'.format(resp.status_code))
         resp_json = resp.json()  # ['Time Series (Daily)']
         return resp_json['financials']
+
+
+    @staticmethod
+    def get_symbols_list():
+        request_link = 'https://financialmodelingprep.com/api/v3/company/stock/list'
+        resp = requests.get(request_link)
+
+        if resp.status_code != 200:
+            # This means something went wrong.
+            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+        resp_json = resp.json()  # ['Time Series (Daily)']
+        return resp_json['symbolsList']
+
 
