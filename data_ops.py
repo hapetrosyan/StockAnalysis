@@ -110,3 +110,53 @@ class DataOps:
     def get_nasdaq_symbols_list():
         nasdaq_list = pd.read_csv('DataFiles\\companylist.csv')
         return nasdaq_list
+
+    @staticmethod
+    def get_company_profile_dict(symbol):
+        mo = misc_ops.MiscOps()
+        request_link = 'https://financialmodelingprep.com/api/v3/company/profile/'+symbol
+        resp = requests.get(request_link)
+
+        if resp.status_code != 200:
+            # This means something went wrong.
+            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+        resp_json = resp.json() # ['Time Series (Daily)']
+        return resp_json['profile']
+
+    @staticmethod
+    def get_company_annual_income_dict(symbol):
+        mo = misc_ops.MiscOps()
+        request_link = 'https://financialmodelingprep.com/api/v3/financials/income-statement/'+symbol
+        resp = requests.get(request_link)
+
+        if resp.status_code != 200:
+            # This means something went wrong.
+            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+        resp_json = resp.json()
+        return resp_json
+
+    @staticmethod
+    def get_company_quarterly_income_dict(symbol):
+        mo = misc_ops.MiscOps()
+        request_link = 'https://financialmodelingprep.com/api/v3/financials/income-statement/' + symbol + '?period=quarter'
+        resp = requests.get(request_link)
+
+        if resp.status_code != 200:
+            # This means something went wrong.
+            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+        resp_json = resp.json()  # ['Time Series (Daily)']
+        return resp_json['financials']
+
+
+    @staticmethod
+    def get_symbols_list():
+        request_link = 'https://financialmodelingprep.com/api/v3/company/stock/list'
+        resp = requests.get(request_link)
+
+        if resp.status_code != 200:
+            # This means something went wrong.
+            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+        resp_json = resp.json()  # ['Time Series (Daily)']
+        return resp_json['symbolsList']
+
+
