@@ -1,12 +1,23 @@
-import pandas_datareader as web
+import pandas as pd
+import numpy as np
+import datetime as dt
+import math
+import warnings
 
+warnings.filterwarnings("ignore")
 
-stocks = []
-f = open('symbols.txt', 'r')
-for line in f:
-    stocks.append(line.strip())
+prices = pd.read_csv('prices.csv', index_col='Date', parse_dates=True)
+volumechanges = pd.read_csv('volume.csv', index_col='Date', parse_dates=True).pct_change()*100
 
+today = dt.date(2000, 1, 15)
+simend = dt.date(2020, 5, 5)
+tickers = []
+transactionid = 0
+money = 1000000
+portfolio = {}
+activelog = []
+transactionlog = []
 
-f.close()
-
-print(stocks)
+def getprice(date, ticker):
+    global prices
+    return prices.loc[date][ticker]
