@@ -21,3 +21,15 @@ transactionlog = []
 def getprice(date, ticker):
     global prices
     return prices.loc[date][ticker]
+
+
+def transacion(id, ticker, amount, price, type, info):
+    global transactionid
+    if type == 'buy':
+        exp_date = today + dt.timedelta(days = 14)
+        transactionid += 1
+    else:
+        exp_date = today
+
+    if type == 'sell':
+        data = 
