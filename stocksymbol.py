@@ -8,17 +8,17 @@ class StockSymbol:
         do = data_ops.DataOps()
         self.symbol = symbol
 
-        # self.alphavantage_100_days_dict = do.get_alphavantage_100_days_dict(self.symbol)
-        # self.alphavantage_intraday_5_min_dict = do.get_alphavantage_intraday_5_min_dict(self.symbol)
+        self.alphavantage_100_days_dict = do.get_alphavantage_100_days_dict(self.symbol)
+        self.alphavantage_intraday_5_min_dict = do.get_alphavantage_intraday_5_min_dict(self.symbol)
         # self.alphavantage_intraday_1_min_dict = do.get_alphavantage_intraday_1_min_dict(self.symbol)
         # self.alphavantage_1_week_dict = do.get_alphavantage_1_week_dict(self.symbol)
-        self.company_profile_dict = do.get_company_profile_dict(self.symbol)
-        self.company_annual_income_dict = do.get_company_annual_income_dict(self.symbol)
+        # self.company_profile_dict = do.get_company_profile_dict(self.symbol)
+        # self.company_annual_income_dict = do.get_company_annual_income_dict(self.symbol)
         # self.company_quarterly_income_dict = do.get_company_quarterly_income_dict(self.symbol)
 
-        # self.alphavantage_intraday_5_min_df = self.__get_alphavantage_df_from_dict(self.alphavantage_intraday_5_min_dict)
+        self.alphavantage_intraday_5_min_df = self.__get_alphavantage_df_from_dict(self.alphavantage_intraday_5_min_dict)
         # self.alphavantage_intraday_1_min_df = self.__get_alphavantage_df_from_dict(self.alphavantage_intraday_1_min_dict)
-        # self.alphavantage_100_days_df = self.__get_alphavantage_df_from_dict(self.alphavantage_100_days_dict)
+        self.alphavantage_100_days_df = self.__get_alphavantage_df_from_dict(self.alphavantage_100_days_dict)
         # self.alphavantage_1_week_df = self.__get_alphavantage_df_from_dict(self.alphavantage_1_week_dict)
 
         # self.ccp_sum_20_100 = self.get_last_n_ccp_sum(n = 20, period = '100_days')
