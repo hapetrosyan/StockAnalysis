@@ -28,42 +28,41 @@ for i in range(0, len(data)):
             pivot, last_pivot_id = row['Low'], i
             up_down = -1
         elif row['High'] > pivot + diff:
-            data.iloc[i]['swings'] = row['High'] - pivot
+            data.loc[data.index[i], 'swings'] = row['High'] - pivot
             pivot, last_pivot_id = row['High'], i
             up_down = 1
-    print(row)
-    print(data)
-            
-'''
+
     # Current trend is up
     elif up_down == 1:
         # If got higher than last pivot, update the swing
-        if row.high > pivot:
+        if row['High'] > pivot:
             # Remove the last pivot, as it wasn't a real one
-            data.ix[i, 'swings'] = data.ix[last_pivot_id, 'swings'] \
-                + (row.high - data.ix[last_pivot_id, 'high'])
-            data.ix[last_pivot_id, 'swings'] = np.nan
-            pivot, last_pivot_id = row.high, i
-        elif row.low < pivot - diff:
-            data.ix[i, 'swings'] = row.low - pivot
-            pivot, last_pivot_id = row.low, i
+            data.loc[data.index[i], 'swings'] = \
+                data.loc[data.index[last_pivot_id], 'swings'] \
+                + (row['High'] - data.loc[data.index[last_pivot_id], 'High'])
+            data.loc[data.index[last_pivot_id], 'swings'] = np.nan
+            pivot, last_pivot_id = row['High'], i
+        elif row['Low'] < pivot - diff:
+            data.loc[data.index[i], 'swings'] = row['Low'] - pivot
+            pivot, last_pivot_id = row['Low'], i
             # Change the trend indicator
             up_down = -1
 
+
     # Current trend is down
     elif up_down == -1:
-            # If got lower than last pivot, update the swing
-        if row.low < pivot:
+        # If got higher than last pivot, update the swing
+        if row['Low'] < pivot:
             # Remove the last pivot, as it wasn't a real one
-            data.ix[i, 'swings'] = data.ix[last_pivot_id, 'swings'] \
-                + (row.low - data.ix[last_pivot_id, 'low'])
-            data.ix[last_pivot_id, 'swings'] = np.nan
-            pivot, last_pivot_id = row.low, i
-        elif row.high > pivot - diff:
-            data.ix[i, 'swings'] = row.high - pivot
-            pivot, last_pivot_id = row.high, i
+            data.loc[data.index[i], 'swings'] = \
+                data.loc[data.index[last_pivot_id], 'swings'] \
+                + (row['Low'] - data.loc[data.index[last_pivot_id], 'Low'])
+            data.loc[data.index[last_pivot_id], 'swings'] = np.nan
+            pivot, last_pivot_id = row['Low'], i
+        elif row['High'] > pivot - diff:
+            data.loc[data.index[i], 'swings'] = row['High'] - pivot
+            pivot, last_pivot_id = row['High'], i
             # Change the trend indicator
             up_down = 1
 
-print data
-'''
+print (data)
