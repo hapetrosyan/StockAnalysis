@@ -9,7 +9,7 @@ data = pd.read_csv('DataFiles/ba_1y.csv', index_col='Date', \
      usecols=['Date', 'Open', 'High', 'Low', 'Close'])
 # data = ba_1y[['Open', 'High', 'Low', 'Close']]
 data.loc[:, 'swings'] = np.nan
-pivot = data.iloc[0, 0]
+pivot = data.loc[data.index[0], 'Open']
 last_pivot_id = 0
 up_down = 0
 diff = .3
@@ -19,7 +19,7 @@ diff = .3
 for i in range(0, len(data)):
     row = data.iloc[i]
 
-    print(row)
+    # print(row)
 
     # We don't have a trend yet
     if up_down == 0:
@@ -65,4 +65,7 @@ for i in range(0, len(data)):
             # Change the trend indicator
             up_down = 1
 
+    # print(row)
+
 print (data)
+data.to_csv('DataFiles/data.csv')
