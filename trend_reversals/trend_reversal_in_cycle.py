@@ -5,21 +5,30 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # ba_1y = yf.Ticker('BA').history(period='1y')
-data = pd.read_csv('DataFiles/ba_1y.csv', index_col='Date', \
+# amzn_1y = yf.Ticker('AMZN').history(period='1y')
+# amzn_1y.to_csv('DataFiles/amzn_1y.csv')
+
+data = pd.read_csv('../DataFiles/amzn_1y.csv', index_col='Date', \
      usecols=['Date', 'Open', 'High', 'Low', 'Close'])
 # data = ba_1y[['Open', 'High', 'Low', 'Close']]
 data.loc[:, 'swings'] = np.nan
 pivot = data.loc[data.index[0], 'Open']
 last_pivot_id = 0
 up_down = 0
-diff = .3
+diff = 3
 
-# print(data[:10])
+
 
 for i in range(0, len(data)):
     row = data.iloc[i]
 
-    # print(row)
+    # print('----------------------------')
+    # print(data[ 0 if i < 4 else i-4 :i+4])
+
+    # print('..........................')
+    # print(f'{data.index[i]}: pivot: {pivot}, \
+    #     last_pivot_id: {last_pivot_id}, \
+    #     up_down: {up_down}')
 
     # We don't have a trend yet
     if up_down == 0:
@@ -67,5 +76,5 @@ for i in range(0, len(data)):
 
     # print(row)
 
-print (data)
-data.to_csv('DataFiles/data.csv')
+# print (data)
+data.to_csv('../DataFiles/data_diff_4.csv')
