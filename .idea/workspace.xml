@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cd34637-99a5-4714-8fc6-c093e0cfcdbd" name="Default Changelist" comment="deleting tt.txt">
+      <change beforePath="$PROJECT_DIR$/.idea/StockAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StockAnalysis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectDocs/plan" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectDocs/plan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pattern_rec.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/pattern_rec.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trend_reversal1.py" beforeDir="false" afterPath="$PROJECT_DIR$/trend_reversal1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trend_reversal_recognition.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/trend_reversal_recognition.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/turtle_demo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/turtle_demo.ipynb" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +40,13 @@
   </component>
   <component name="ProjectId" id="1SFMyWHdtw6ntlJHJg1bHdiK1f2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -44,18 +56,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Q_C_Hakob\github\StockAnalysis" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.test1">
     <configuration name="data_ops" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -173,6 +173,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -283,6 +284,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="deleting tt.txt" />
@@ -290,5 +292,19 @@
     <MESSAGE value="adding data file" />
     <MESSAGE value="updating todo list" />
     <option name="LAST_COMMIT_MESSAGE" value="updating todo list" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="433" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596746501266">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="433" y="218" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1504.963@0.0.1504.963" timestamp="1596746501266" />
+    <state x="532" y="236" key="FileChooserDialogImpl" timestamp="1596746304612">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="532" y="236" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1596746304612" />
+    <state x="254" y="127" key="SettingsEditor" timestamp="1596746324210">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="254" y="127" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1596746324210" />
   </component>
 </project>

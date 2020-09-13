@@ -1,5 +1,9 @@
 modules:
 
+
+
+1. get and incrementally store data for all the symbols
+
 - folders:
     - DataFiles
     - DataClasses
