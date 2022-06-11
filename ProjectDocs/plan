@@ -1,0 +1,23 @@
+modules:
+
+
+
+1. get and incrementally store data for all the symbols
+
+- folders:
+    - DataFiles
+    - DataClasses
+    - TestFiles
+
+- classes for getting data
+
+- Controller Classes
+
+- classes for storing data
+
+- stock object
+
+- general ops classes
+
+- classes for analyzing texts
+
